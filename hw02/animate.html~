@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Softdev</title>
+  </head>
+  <body>
+    <h1>Connect the Dots</h1>
+    <canvas id="playground" width="538" height="538">
+    </canvas>
+
+    <button id="clear" type="button">Clear</button>
+    <script src="dotconn.js"></script>
+  </body>
+
+</html>
