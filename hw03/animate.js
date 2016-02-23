@@ -55,7 +55,9 @@ var moveDVD = function moveDVD(){
     if (x == c.width)
 	dx = -1;
     if (y == 0)
-	dy = 0;
+	dy = 1;
+    if (y == c.height)
+	dy = -1;
 
     ctx.drawImage(logo, x, y, 100, 100);
     
