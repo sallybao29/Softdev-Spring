@@ -1,19 +1,8 @@
 console.log("Loaded");
 
 var pic = document.getElementById("vimage");
-/*
-var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-c.setAttribute("cx", 0);
-c.setAttribute("cy", 0);
-c.setAttribute("r", "100");
-c.setAttribute("fill", "red");
-c.setAttribute("stroke", "green");
-pic.appendChild(c);
-*/
-var change = function(e){
-    e.preventDefault();
-    this.setAttribute("fill", "green");
-};
+var stop = document.getElementById("stop");
+var intervalID;
 
 var drawDot = function(x, y){
     var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -26,13 +15,25 @@ var drawDot = function(x, y){
     pic.appendChild(c);
 };
 
-var clicked = function(e){
-    if (e.toElement == this){
-	drawDot(e.offsetX, e.offsetY);
-    }
+
+var stop = function(){
+
 };
 
-pic.addEventListener("click", clicked);
+var grow = function(){
+    var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    var radius = 20;
+
+    var animateCode = function(){
+	c = document.getElementsByTagName("circle")[0];
+	//increment radius
+	radius = parseInt(c.getAttribute("r"));
+	c.setAttribute("r", radius.toString());
+    };
+    intervalID = window.setInterval(animateCode, 16);
+};
+
+//pic.addEventListener("click", clicked);
 
 
 
