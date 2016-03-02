@@ -2,38 +2,45 @@ console.log("Loaded");
 
 var pic = document.getElementById("vimage");
 var stop = document.getElementById("stop");
+var circle = document.getElementById("circle");
 var intervalID;
 
-var drawDot = function(x, y){
-    var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    c.setAttribute("cx", x);
-    c.setAttribute("cy", y);
-    c.setAttribute("r", "50");
-    c.setAttribute("fill", "red");
-    c.setAttribute("stroke", "black");
-    c.addEventListener("click", change);
-    pic.appendChild(c);
+
+var stopIt = function(){
+		window.clearInterval(intervalID);
 };
 
-
-var stop = function(){
-
-};
 
 var grow = function(){
-    var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    var radius = 20;
+		var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+		c.setAttribute("cx", 250);
+		c.setAttribute("cy", 250);
+		c.setAttribute("fill", "red");
+		c.setAttribute("r", 0);
+		pic.appendChild(c);
+		var radius = 0;
+		var expanding = true;
 
-    var animateCode = function(){
-	c = document.getElementsByTagName("circle")[0];
-	//increment radius
-	radius = parseInt(c.getAttribute("r"));
-	c.setAttribute("r", radius.toString());
-    };
-    intervalID = window.setInterval(animateCode, 16);
+		var animateCode = function(){
+				var a = document.getElementsByTagName("circle")[0];
+				radius = parseInt(a.getAttribute("r"));
+				if (expanding)
+						radius += 2;
+				else 
+						radius -= 2;
+				
+				if (radius <= 0)
+						expanding = true;
+				if (radius >= 250)
+						expanding = false;
+
+				a.setAttribute("r", radius.toString());
+		};
+		intervalID = window.setInterval(animateCode, 16);
 };
 
-//pic.addEventListener("click", clicked);
+circle.addEventListener("click", grow);
+stop.addEventListener("click", stopIt);
 
 
 
