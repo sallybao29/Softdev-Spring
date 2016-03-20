@@ -1,9 +1,21 @@
 .chart div {
-    font: 10px sans-serif;
+    font: 12px sans-serif;
     background-color: steelblue;
     text-align: right;
     padding: 3px;
     margin: 1px;
-    color: white;
+		font-weight: bold;
+		color: white;
 }
+
+table td.state {
+		font: 14px sans-serif;
+		text-transform: uppercase;
+}
+
+table td {
+		height: 40px;
+}
+
+
 
