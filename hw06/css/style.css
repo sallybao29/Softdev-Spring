@@ -1,0 +1,30 @@
+.chart div {
+    font: 12px sans-serif;
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    font-weight: bold;
+    color: white;
+}
+
+table td.state {
+    font: 12px sans-serif;
+    text-transform: uppercase;
+    width: 160px;
+}
+
+#logo {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+#logo div {
+    display: inline-block;
+    font: 20px sans-serif;
+    padding: 3px;
+    color: white;
+    margin: 20px;
+}
