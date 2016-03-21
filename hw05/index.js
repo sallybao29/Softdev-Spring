@@ -2,7 +2,6 @@ console.log("loaded");
 
 var data = [{'state': 'Alabama', 'total': 50, 'allotted': 50},
 						{'state': 'Alaska', 'total': 28, 'allotted': 28},
-						{'state': 'America Samoa', 'total': 9, 'allotted': 0},
 						{'state': 'Arizona', 'total': 58, 'allotted': 0},
 						{'state': 'Arkansas', 'total': 40, 'allotted': 39},
 						{'state': 'California', 'total': 172, 'allotted': 0},
@@ -12,7 +11,6 @@ var data = [{'state': 'Alabama', 'total': 50, 'allotted': 50},
 						{'state': 'District of Columbia', 'total': 19, 'allotted': 19},
 						{'state': 'Florida', 'total': 99, 'allotted': 99},
 						{'state': 'Georgia', 'total': 76, 'allotted': 72},
-						{'state': 'Guam', 'total': 9, 'allotted': 1},
 						{'state': 'Hawaii', 'total': 19, 'allotted': 19},
 						{'state': 'Idaho', 'total': 32, 'allotted': 32},
 						{'state': 'Illinois', 'total': 69, 'allotted': 67},
@@ -37,7 +35,6 @@ var data = [{'state': 'Alabama', 'total': 50, 'allotted': 50},
 						{'state': 'New York', 'total': 95, 'allotted': 0},
 						{'state': 'North Carolina', 'total': 72, 'allotted': 71},
 						{'state': 'North Dakota', 'total': 28, 'allotted': 0},
-						{'state': 'Northern Marianas', 'total': 9, 'allotted': 9},
 						{'state': 'Ohio', 'total': 66, 'allotted': 66},
 						{'state': 'Oklahoma', 'total': 43, 'allotted': 40},
 						{'state': 'Oregon', 'total': 28, 'allotted': 0},
@@ -50,7 +47,6 @@ var data = [{'state': 'Alabama', 'total': 50, 'allotted': 50},
 						{'state': 'Texas', 'total': 155, 'allotted': 155},
 						{'state': 'Utah', 'total': 40, 'allotted': 0},
 						{'state': 'Vermont', 'total': 16, 'allotted': 16},
-						{'state': 'Virgin Islands', 'total': 9, 'allotted': 0},
 						{'state': 'Virginia', 'total': 49, 'allotted': 46},
 						{'state': 'Washington', 'total': 44, 'allotted': 0},
 						{'state': 'West Virginia', 'total': 34, 'allotted': 0},
@@ -60,7 +56,7 @@ var data = [{'state': 'Alabama', 'total': 50, 'allotted': 50},
 
 var foo = d3.scale.linear()
     .domain([0, 172])
-    .range([0, 1650]);
+    .range([0, 1600]);
 
 var tr = d3.select(".chart")
 		.selectAll("tr")

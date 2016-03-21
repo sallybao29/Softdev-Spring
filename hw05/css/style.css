@@ -11,11 +11,23 @@
 table td.state {
 		font: 14px sans-serif;
 		text-transform: uppercase;
+		width: 180px;
 }
 
-table td {
-		height: 40px;
+#logo {
+		margin-bottom: 20px;
+		margin-top: 20px;
+		width: 100%;
 }
 
+img {
+		vertical-align: middle;
+}
 
-
+#logo div {
+		display: inline-block;
+		font: 20px sans-serif;
+		padding: 3px;
+		color: white;
+		margin: 20px;
+}
