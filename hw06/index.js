@@ -67,14 +67,13 @@ tr.append("td")
     .attr("class", "state")
     .html(function(d){ return d.state });
 
-var bars = tr.append("td")
+tr.append("td")
     .attr("class", "stats")
     .append("div")
     .style("background-color", function(d){
-	if (d.allotted > 0) return "steelblue"; else return "gray"; })
-    .text(function(d){ return d.total; });
+				if (d.allotted > 0) return "steelblue"; else return "gray"; })
+    .text(function(d){ return d.total; })
+		.transition()
+		.duration(1500)
+    .style("width", function(d){ return foo(d.total) + "px"; });;
 
-bars.transition()
-    .duration(1500)
-    .style("width", function(d){ return foo(d.total) + "px"; });
-   
