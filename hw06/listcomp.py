@@ -42,6 +42,7 @@ def strength(password):
 
     return int(10 + sum(strength) * 2.5)
     
+    
 
 if __name__ == "__main__":
     
