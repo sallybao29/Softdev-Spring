@@ -1,0 +1,11 @@
+def wrapper(f):
+    def inner(*arg):
+        return f(*arg)
+    return inner
+
+
+def foo(x, y):
+    return x * y
+
+closure = wrapper(foo)
+print closure("hello", 2)
