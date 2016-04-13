@@ -1,0 +1,75 @@
+ul[class="header"]  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    //border: 3px solid red;
+}
+
+li[class="header"] {
+    // border: 3px solid blue;
+    float: right;
+    //padding:5px;
+    padding-right:10px;
+    padding-bottom: 13px;
+    margin-right: 20px;
+}
+
+a:link, a:visited {
+	    display: block;
+	    width: 290px;
+	    color: white;
+	    background-color: black;
+	    text-align: center;
+	    //padding: 5px;
+	    text-decoration: none;
+	    font-family: Arial;
+	    //height: 15px;
+	    margin-right:41px;
+	  
+	}
+
+a:hover, a:active {
+	     background-color:#94BA65;
+	 }
+
+#container {
+    margin: auto;
+    width: 60%;
+    //border: 5px solid black;
+}
+#nav {
+    background-color:black;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+#banner {
+    height: 260px;
+    //background: url("../static/apictionary.png") no-repeat;
+    margin: auto;
+}
+
+img.banner {
+    margin: auto;
+    align: center;
+}
+
+p, h {
+    //font-family: Arial;
+}
+
+#body {
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    //border: 5px solid black;
+}
+
+text {
+    margin: 1cm;
+   // border: 3px solid blue;
+   padding: 1cm;
+   font-family: Georgia, serif;
+}
+

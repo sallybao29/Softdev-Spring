@@ -4,7 +4,7 @@ def union(a, b):
 
 #all objects in both a and b
 def intersect(a, b):
-    return [x for x in a for y in b if x == y]
+    return [x for x in a if x in b]
 
 #all objects in a not in b
 def set_diff(a, b):

@@ -3,29 +3,39 @@ def wrapper(f):
         return f(*arg)
     return inner
 
+def make_bold(fn):
+    return lambda: "<b>" + fn() + "</b>"
 
-def foo(x, y):
-    return x * y
+def make_italic(fn):
+    return lambda: "<i>" + fn() + "</i>"
 
-closure = wrapper(foo)
-#print closure("hello", 2)
+@make_bold
+@make_italic
+def foo():
+    return "hello"
+
+hello = foo()
+
+print hello
 
 ##################################### HW ######################################
 import time
 
 def trace(f):
     def inner(*arg):
-        return f.func_name + str(arg) + ": " + str(f(*arg))
+        print f.func_name + str(arg) + ": " + str(f(*arg))
     return inner
 
 def timer(f):
     def inner(*arg):
         start = time.time()
-        f(*arg)
+        x = f(*arg)
         stop = time.time()
-        return "Execution time: " + str(stop - start)
+        print "Execution time: " + str(stop - start)
+        return x
     return inner
 
+@trace
 def fib(n):
     if n == 0:
         return 0
@@ -34,10 +44,8 @@ def fib(n):
     return fib(n - 1) + fib(n - 2)
 
 
-fib_test1 = trace(fib)
-print fib_test1(5)
+fib_test = fib(5)
 
-fib_test2 = timer(fib)
-print fib_test2(5)
+fib_test
 
 
