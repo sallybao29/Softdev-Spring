@@ -1,21 +1,21 @@
 import urllib2, json
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import utils
 import time
 
 app = Flask(__name__)
 
 def trace(f):
-    def inner(*arg):
-        x = f(*arg)
-        print f.func_name + ": " + str(arg)
+    def inner(*args, **kwargs):
+        x = f(*args, **kwargs)
+        print f.func_name + ": " + str(args)
         return x
     return inner
 
 def timer(f):
-    def inner(*arg):
+    def inner(*args, **kwargs):
         start = time.time()
-        x = f(*arg)
+        x = f(*args, **kwargs)
         print "Execution time: " + str(time.time() - start) + "\n"
         return x
     return inner
@@ -25,7 +25,8 @@ def timer(f):
 @app.route("/home", methods = ["GET", "POST"])
 def home():
     if request.method == "POST":
-        return redirect("/result/
+        word = request.form["word"]
+        return redirect("/result/" + word)
     return render_template("home.html")
 
 @app.route("/result/<word>")
